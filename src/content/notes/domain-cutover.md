@@ -3,7 +3,6 @@ title: "Field Note 002: Moving my domain — and finding the mail I didn't know 
 description: "Pointing a domain at a new site sounds like a five-minute job. Checking the DNS first turned up an email setup that had quietly died months ago."
 pubDate: 2026-11-14
 tags: ["dns", "cloudflare", "email security", "dmarc", "decision log"]
-draft: true
 ---
 
 ## The environment
@@ -52,12 +51,16 @@ I also decided to fix the authentication gap while I was in there. The domain do
 
 ## The results
 
-<!-- Fill in after the cutover is verified: activation time, HTTPS check, test email to hello@ -->
+- **Faster than expected.** I saved the new nameservers at 9:43 AM. Within about 15 minutes, public resolvers were returning Cloudflare's nameservers. Registrars warn it can take up to 48 hours; it didn't.
+- **Site live on both addresses.** `iamgiovannihale.com` and `www` both serve the new site over HTTPS.
+- **Mail works.** A test message to `hello@` landed in my inbox within the same minute it was sent. Gmail showed it relayed through my domain, with the original sender's signature still intact.
+- **Authentication in place.** SPF, DKIM, and a strict DMARC policy are all published. Before today the domain had none of them.
+
+**One thing I didn't anticipate:** the first time I loaded the new domain, my browser autofilled `/home` — the old Squarespace homepage path — and hit a bare framework 404. Old links don't die just because the site changed. I added redirects for the old paths (`/home` and `/blog`) and a proper 404 page that points visitors somewhere useful.
 
 ## What's next
 
 - Watch the DMARC policy. If I ever send *from* this domain, the strict policy will need SPF and DKIM set up for whatever sends it.
 - Decide whether to move the registration to Cloudflare before it renews next September.
-- Audit which old accounts, if any, still use addresses at this domain for sign-in.
 
 **What I'd tell someone else:** look at your DNS before you change it. Mine was carrying a dead mail setup and no protection against spoofing, and I only found out because I checked.
