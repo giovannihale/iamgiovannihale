@@ -9,6 +9,10 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
 	site: "https://iamgiovannihale.com",
 	integrations: [mdx(), sitemap()],
+	redirects: {
+		"/home": "/",
+		"/blog": "/notes/",
+	},
 	adapter: cloudflare({
 		platformProxy: {
 			enabled: true,
