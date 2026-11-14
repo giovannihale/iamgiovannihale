@@ -12,6 +12,8 @@ The new site was live on a Cloudflare test address ([Field Note 001](/notes/buil
 
 The last step looked simple: point the domain at the new site and set up a contact address — `hello@iamgiovannihale.com` — that forwards to my personal inbox.
 
+Same setup as last time: Claude as my AI execution partner, working in the browser and DNS dashboards while I made the calls. Account sign-ins and password prompts stayed with me.
+
 ## The challenge
 
 Before changing anything, I pulled the domain's public DNS records. Moving nameservers replaces *every* record at once, so anything I didn't know about would break silently.

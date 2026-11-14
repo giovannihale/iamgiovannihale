@@ -11,6 +11,8 @@ I had a personal site on Squarespace. The website plan lapsed, and the domain ke
 
 I was already planning a rebrand. The question was where the new site should live.
 
+**How I worked:** I built this with Claude as an AI execution partner. It recommended options, wrote most of the code, and drove the browser. I set the direction, made the final calls, and approved anything that touched an account.
+
 ## The challenge
 
 The easy path was to renew Squarespace and pick a template. It's polished, it works from a phone, and it would have been live the same day. Basic runs about $19 a month on an annual plan.
