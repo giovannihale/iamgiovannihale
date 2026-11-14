@@ -1,0 +1,24 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+	notes: CollectionEntry<'notes'>[];
+}
+
+const { notes } = Astro.props;
+---
+
+<ul class="note-list">
+	{
+		notes.map((note) => (
+			<li>
+				<a href={`/notes/${note.id}/`}>
+					<FormattedDate date={note.data.pubDate} />
+					<span class="t">{note.data.title}</span>
+					<span class="d">{note.data.description}</span>
+				</a>
+			</li>
+		))
+	}
+</ul>

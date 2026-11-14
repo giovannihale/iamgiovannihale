@@ -1,0 +1,25 @@
+---
+import Page from '../../layouts/Page.astro';
+import NoteList from '../../components/NoteList.astro';
+import { getPublishedNotes } from '../../lib/notes';
+
+const notes = await getPublishedNotes();
+---
+
+<Page title="Field Notes" description="Working notes on systems, identity, and security — decisions, tradeoffs, and lessons learned.">
+	<p class="label">Field Notes</p>
+	<h1>Notes from the work</h1>
+	<p class="lede">
+		Real problems, the options I weighed, what I chose, and what I'd do differently. Employers and
+		sensitive details are anonymized. Lab work is labeled as lab work.
+	</p>
+	<div class="list">
+		<NoteList notes={notes} />
+	</div>
+</Page>
+
+<style>
+	.list {
+		margin-top: 2.5rem;
+	}
+</style>

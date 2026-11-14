@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Page from './Page.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+
+type Props = CollectionEntry<'notes'>['data'];
+
+const { title, description, pubDate, updatedDate, tags } = Astro.props;
+---
+
+<Page title={title} description={description}>
+	<article>
+		<header class="note-head">
+			<p class="label">
+				<a href="/notes/">Field Notes</a> · <FormattedDate date={pubDate} />
+				{updatedDate && <> · updated <FormattedDate date={updatedDate} /></>}
+			</p>
+			<h1>{title}</h1>
+			<p class="lede">{description}</p>
+			{tags.length > 0 && <p class="label tags">{tags.join(' / ')}</p>}
+		</header>
+		<div class="prose">
+			<slot />
+		</div>
+		<hr />
+		<p class="label"><a href="/notes/">← All field notes</a></p>
+	</article>
+</Page>
+
+<style>
+	.note-head {
+		margin-bottom: 2.5rem;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid var(--rule);
+	}
+	.note-head .label a {
+		text-decoration: none;
+	}
+	.tags {
+		margin: 0;
+	}
+</style>

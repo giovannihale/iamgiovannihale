@@ -1,6 +1,6 @@
 {
 	"name": "iamgiovannihale",
-	"description": "Build a personal website, blog, or portfolio with Astro.",
+	"description": "Giovanni Hale — field notes on systems, identity, and security.",
 	"cloudflare": {
 		"label": "Astro Framework Starter",
 		"products": [
@@ -16,6 +16,8 @@
 		"@astrojs/mdx": "4.3.13",
 		"@astrojs/rss": "4.0.14",
 		"@astrojs/sitemap": "3.6.1",
+		"@fontsource-variable/source-serif-4": "^5.3.1",
+		"@fontsource/ibm-plex-mono": "^5.3.0",
 		"astro": "5.16.9",
 		"typescript": "5.9.3"
 	},

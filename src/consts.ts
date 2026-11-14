@@ -1,5 +1,8 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
+export const SITE_TITLE = "Giovanni Hale";
+export const SITE_DESCRIPTION =
+	"Systems, identity, and security — field notes from an IT operator, written in public.";
 
-export const SITE_TITLE = "Astro Blog";
-export const SITE_DESCRIPTION = "Welcome to my website!";
+export const LINKS = {
+	github: "https://github.com/giovannihale",
+	youtube: "https://www.youtube.com/@GiovanniHale",
+};

@@ -1,62 +1,63 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import Page from '../layouts/Page.astro';
+import { LINKS } from '../consts';
+
+const stack = [
+	['Identity', 'Okta, Microsoft Entra ID, MFA, user lifecycle'],
+	['Endpoints', 'Microsoft Intune, Kandji, Apple Business Manager, Windows and macOS fleets'],
+	['Productivity', 'Microsoft 365, Google Workspace'],
+	['Security', 'CrowdStrike'],
+	['Service', 'Jira Service Management, Confluence'],
+];
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage="/blog-placeholder-about.jpg"
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<Page title="About" description="Giovanni Hale — systems administrator focused on identity, endpoints, and security.">
+	<p class="label">About</p>
+	<h1>Giovanni Hale</h1>
+	<div class="prose">
+		<p class="lede">
+			I'm a systems administrator. I like being handed an unfamiliar system, figuring out how it
+			actually works, and then explaining it clearly to the people who depend on it.
+		</p>
+		<p>
+			I've spent more than ten years in enterprise IT, much of it supporting executives and working
+			across identity, endpoint management, and security tooling. That's work where the details
+			matter and the person on the other end needs a straight answer, not a lecture.
+		</p>
+		<p>
+			I write these notes for two reasons. Writing is how I make sure I understand something. And
+			if you're deciding whether to work with me, I'd rather show you how I think than tell you.
+		</p>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+		<h2>What I've worked with</h2>
+		<table>
+			<tbody>
+				{
+					stack.map(([area, tools]) => (
+						<tr>
+							<th scope="row">{area}</th>
+							<td>{tools}</td>
+						</tr>
+					))
+				}
+			</tbody>
+		</table>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+		<h2>Background</h2>
+		<p>
+			B.S. in Information Technology, cybersecurity concentration. Before IT, I served as a U.S. Navy
+			Hospital Corpsman.
+		</p>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+		<h2>Elsewhere</h2>
+		<p>
+			<a href={LINKS.github}>GitHub</a> · <a href={LINKS.youtube}>YouTube</a>
+		</p>
+	</div>
+</Page>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+<style>
+	th {
+		width: 8.5rem;
+	}
+</style>

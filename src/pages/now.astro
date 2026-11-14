@@ -1,0 +1,40 @@
+---
+import Page from '../layouts/Page.astro';
+
+const updated = 'November 2026';
+---
+
+<Page title="Now" description="What Giovanni Hale is working on, studying, and building right now.">
+	<p class="label">Now · updated {updated}</p>
+	<h1>What I'm focused on</h1>
+	<div class="prose">
+		<h2>Working</h2>
+		<p>
+			Systems administrator on a fully remote contract. Day to day that means Google Workspace
+			administration, device management in Intune with some Apple Business Manager, patching, and
+			Jira and Confluence administration.
+		</p>
+		<p>
+			Most of my background is Microsoft 365, so Google Workspace admin is new ground. I'm learning
+			it the way I learn any system: find out where everything lives, then write it down.
+		</p>
+
+		<h2>Studying</h2>
+		<ul>
+			<li><strong>CompTIA CySA+</strong>, targeting April 2027.</li>
+			<li>Next: Google's Generative AI Leader certification.</li>
+		</ul>
+
+		<h2>Building</h2>
+		<p>
+			This site. Astro, deployed to Cloudflare Workers from a public GitHub repo, built with free
+			tools only. <a href="/notes/building-this-site/">Field Note 001</a> covers how and why.
+		</p>
+
+		<hr />
+		<p class="label">
+			This is a <a href="https://nownownow.com/about">now page</a>. If you're reading it long after the
+			date above, I've probably moved on to something new.
+		</p>
+	</div>
+</Page>
