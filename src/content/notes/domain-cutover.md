@@ -1,6 +1,6 @@
 ---
 title: "Field Note 002: Moving my domain — and finding the mail I didn't know was broken"
-description: "Pointing a domain at a new site sounds like a five-minute job. Checking the DNS first turned up an email setup that had quietly died months ago."
+description: "Pointing a domain at a new site sounds like a five-minute job. Checking the DNS first turned up an email setup that had quietly stopped working."
 pubDate: 2026-11-14
 tags: ["dns", "cloudflare", "email security", "dmarc", "decision log"]
 ---
